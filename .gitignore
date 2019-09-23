@@ -10,3 +10,6 @@ npm-debug.log
 *ngfactory.ts
 *metadata.json
 *ngsummary.json
+.vs/
+CardLayout.API/obj/
+CardLayout.API/bin/

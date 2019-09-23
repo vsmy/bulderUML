@@ -3,7 +3,7 @@
   "defaultVariables": null,
   "documentGenerator": {
     "fromDocument": {
-      "url": "https://localhost:44376/swagger/v1/swagger.json",
+      "url": "https://localhost:44381/swagger/v1/swagger.json",
       "output": null
     }
   },
@@ -62,7 +62,7 @@
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "../src/shared/service-proxies/event-service-proxy.ts"
+      "output": "../src/shared/service-proxies/service-proxy.ts"
     },
     "openApiToCSharpClient": {
       "clientBaseClass": null,

@@ -15,7 +15,7 @@ import {
     ConnectorConstraints, DiagramTools, SnapConstraints, AlignmentOptions,
     UndoRedo, DiagramContextMenu, Snapping, BpmnDiagrams, HierarchicalTree, PrintAndExport,
     MindMap as MindMapTree, ZoomOptions, DataBinding, Overview, DiagramRegions, ConnectorBridging, 
-    LayoutAnimation, UserHandleModel, FileFormats, SymbolPalette, CommandManagerModel, Keys, KeyModifiers, SelectorConstraints
+    LayoutAnimation, UserHandleModel, FileFormats, SymbolPalette, CommandManagerModel, Keys, KeyModifiers, SelectorConstraints, Rect
 } from '@syncfusion/ej2-diagrams';
 import { PageCreation } from '../scripts/pages';
 import { SelectorViewModel } from '../scripts/selector';
@@ -943,10 +943,10 @@ export class HomeComponent implements AfterViewInit {
             },
             pageSettings: {
                 background: 
-                { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Croatian_passport_data_page.jpg/250px-Croatian_passport_data_page.jpg',  }, width: 600, height: 300, multiplePage: true, margin: { left: 5, top: 5 },
+                { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Croatian_passport_data_page.jpg/250px-Croatian_passport_data_page.jpg',  }, width: 100, height: 100, multiplePage: true, margin: { left: 5, top: 5 },
                 orientation: 'Landscape'
             },
-            scrollSettings: { canAutoScroll: false, scrollLimit: 'Infinity', minZoom: 0.25, maxZoom: 30 },
+            scrollSettings: {canAutoScroll: false, scrollLimit: 'Infinity', minZoom: 0.25, maxZoom: 30 },
             selectedItems: { constraints: SelectorConstraints.All & ~SelectorConstraints.ToolTip },
             getNodeDefaults: this.setNodeDefaults,
             getConnectorDefaults: this.setConnectorDefaults,

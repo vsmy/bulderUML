@@ -4,6 +4,11 @@
     "description": "Essential JS 2 for Angular - Diagram Builder application",
     "author": "Syncfusion Inc.",
     "license": "SEE LICENSE IN license",
+    "scripts": {
+        "ng": "ng",
+        "build": "ng build --prod",
+        "start": "ng serve --host 0.0.0.0 --port 4400"
+    },
     "dependencies": {
         "@angular/animations": "~7.2.0",
         "@angular/common": "~7.2.0",

@@ -1,26 +1,35 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "importHelpers": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "module": "amd",
+    "declaration": true,
+    "removeComments": true,
+    "noLib": false,
     "lib": [
-      "es2018",
+      "es2015",
       "dom"
     ],
-    "baseUrl": "src",
-    "paths": {
-      "@app/*": ["app/*"],
-      "@env/*": ["environments/*"]
-    }
-  }
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "pretty": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": false,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "types": [
+      "requirejs"
+    ],
+    "baseUrl": "./"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": false
 }

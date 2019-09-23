@@ -1,148 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>ngX-Rocket</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#4e8ef7" />
-    <link rel="manifest" href="manifest.json" />
-    <!-- add to homescreen for ios -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <html>
-      <head>
-        <link
-          href="https://cdn.syncfusion.com/ej2/material.css"
-          rel="stylesheet"
-        />
-        <link href="//cdn.syncfusion.com/ej2/fabric.css" rel="stylesheet" />
-        <script type="text/javascript">
-          if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-            document.write(
-              '<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.min.js"><\/script>'
-            );
-          }
-        </script>
+<head>
+    <title>Essential JS 2 for Angular - Diagram Builder</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Essential JS 2 for Angular - Diagram Builder">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="./assets/index.css" rel="stylesheet" />
+    <link href="./assets/dbstyle/diagrambuilder.css" rel="stylesheet" />
+    <link href="./assets/db-icons1/style.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.10/Reflect.min.js"></script>
+    <script type="text/javascript">
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"><\/script>');
+        }
+    </script>
+</head>
 
-        <script
-          defer
-          src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-          integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          defer
-          src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-          integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-          crossorigin="anonymous"
-        ></script>
-
-        <script
-          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"
-        ></script>
-        <!-- Popper.JS -->
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-          integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-          crossorigin="anonymous"
-        ></script>
-        <!-- Bootstrap JS -->
-        <script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-          integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://ssl.gstatic.com/trends_nrtr/1845_RC03/embed_loader.js"
-        ></script>
-      </head>
-
-      <body style="overflow: hidden">
-        <style>
-          .e-tab .e-tab-header .e-toolbar-item.e-active .e-text-wrap::before {
-            border: unset !important;
-            content: '';
-            display: block;
-            position: absolute;
-            top: 95%;
-            width: 100%;
-          }
-          @font-face {
-            font-family: 'e-grid-rowheight';
-            src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMj25TIkAAAEoAAAAVmNtYXDTR87+AAABjAAAAEBnbHlmIRqrXwAAAdQAAACAaGVhZBNsJEUAAADQAAAANmhoZWEIUAQEAAAArAAAACRobXR4DAAAAAAAAYAAAAAMbG9jYQAQAEAAAAHMAAAACG1heHABEwAkAAABCAAAACBuYW1lc0cOBgAAAlQAAAIlcG9zdErpthoAAAR8AAAATQABAAAEAAAAAFwEAAAAAAAD8wABAAAAAAAAAAAAAAAAAAAAAwABAAAAAQAAc0Ewh18PPPUACwQAAAAAANgtb68AAAAA2C1vrwAAAAAD8wPqAAAACAACAAAAAAAAAAEAAAADABgABgAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA50zplwQAAAAAXAQAAAAAAAABAAAAAAAABAAAAAQAAAAEAAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABAAsAAAABgAEAAEAAudM6Zf//wAA50zpl///AAAAAAABAAYABgAAAAIAAQAAAAAAEABAAAEAAAAAA/MCXQAEAAATITUnIQ0D5gb8IAGiuwEAAAAABgAAAAADvAPqAAMABwALAA8AEwAXAAA3IRUhAyEVIREhFSETIRUhEyEVIQMhFSFFA3b8igIDd/yJA3f8iQIDdvyKAQN3/IkBA3b8inJdARBdAQ5cAQ5dAQ1dARBdAAAAAAASAN4AAQAAAAAAAAABAAAAAQAAAAAAAQAHAAEAAQAAAAAAAgAHAAgAAQAAAAAAAwAHAA8AAQAAAAAABAAHABYAAQAAAAAABQALAB0AAQAAAAAABgAHACgAAQAAAAAACgAsAC8AAQAAAAAACwASAFsAAwABBAkAAAACAG0AAwABBAkAAQAOAG8AAwABBAkAAgAOAH0AAwABBAkAAwAOAIsAAwABBAkABAAOAJkAAwABBAkABQAWAKcAAwABBAkABgAOAL0AAwABBAkACgBYAMsAAwABBAkACwAkASMgZS1pY29uc1JlZ3VsYXJlLWljb25zZS1pY29uc1ZlcnNpb24gMS4wZS1pY29uc0ZvbnQgZ2VuZXJhdGVkIHVzaW5nIFN5bmNmdXNpb24gTWV0cm8gU3R1ZGlvd3d3LnN5bmNmdXNpb24uY29tACAAZQAtAGkAYwBvAG4AcwBSAGUAZwB1AGwAYQByAGUALQBpAGMAbwBuAHMAZQAtAGkAYwBvAG4AcwBWAGUAcgBzAGkAbwBuACAAMQAuADAAZQAtAGkAYwBvAG4AcwBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIAB1AHMAaQBuAGcAIABTAHkAbgBjAGYAdQBzAGkAbwBuACAATQBlAHQAcgBvACAAUwB0AHUAZABpAG8AdwB3AHcALgBzAHkAbgBjAGYAdQBzAGkAbwBuAC4AYwBvAG0AAAAAAgAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAQIBAwEEABNNVF9DaGVja2JveGNvbGxhcHNlDWFsaWduLWp1c3RpZnkAAAAAAA==)
-              format('truetype');
-            font-weight: normal;
-            font-style: normal;
-          }
-
-          .e-small-icon::before {
-            font-family: 'e-grid-rowheight';
-            content: '\e997';
-          }
-
-          .e-medium-icon::before {
-            content: '\e94c';
-          }
-
-          .e-big-icon::before {
-            font-family: 'e-grid-rowheight';
-            content: '\e74c';
-          }
-
-          #container {
-            width: 100%;
-          }
-
-          #control-container {
-            padding: 0px !important;
-          }
-
-          body {
-            margin: 0;
-            background: #efefef50;
-          }
-
-          .e-float-input input:focus~label.e-float-text,
-    .e-float-input input~label.e-label-top.e-float-text,
-    .e-float-input input label.e-float-text.e-label-top,
-    .e-float-input.e-control-wrapper input:focus~label.e-float-text,
-    /* .e-float-input.e-control-wrapper input:valid ~ label.e-float-text, */
-    .e-float-input.e-control-wrapper input~label.e-label-top.e-float-text,
-    .e-float-input.e-control-wrapper input label.e-float-text.e-label-top {
-            transform: unset !important;
-          }
-
-          .e-float-input input,
-          .e-float-input.e-control-wrapper input {
-            background: #fff0 !important;
-            border: unset !important;
-            border-bottom: 1px solid !important;
-            color: inherit !important;
-            border-bottom-color: #919191 !important;
-          }
-        </style>
-        <!--[if lt IE 10]>
-          <p>
-            You are using an <strong>outdated</strong> browser. Please
-            <a href="http://browsehappy.com/">upgrade your browser</a> to
-            improve your experience.
-          </p>
-        <![endif]-->
-        <noscript>
-          <p>
-            This page requires JavaScript to work properly. Please enable
-            JavaScript in your browser.
-          </p>
-        </noscript>
-        <app-root></app-root>
-      </body>
-    </html>
-  </head>
+<body>
+    <div class="sb-content-overlay">
+        <div class="sb-loading">
+            <svg class="circular" height="40" width="40">
+                <circle class="loadingPath" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"></circle>
+            </svg>
+        </div>
+    </div>
+    <app-root></app-root>
+</body>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.8.18/zone.min.js"></script>
+<script src="./dist/common.js"></script> -->
 </html>

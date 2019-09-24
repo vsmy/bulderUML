@@ -21,8 +21,15 @@ export class CropImageComponent implements OnInit {
   }
   imageCropped(event: ImageCroppedEvent) {
       this.croppedImage = event.base64;
-
   }
+  
+  rotateLeft(){
+    this.imageCropper.rotateLeft();
+  }
+  rotateRight(){
+    this.imageCropper.rotateRight();
+  }
+
   imageLoaded() {
     // show cropper
   }

@@ -1156,7 +1156,7 @@
 
 <div id="diagramTemplateDiv1" style="display: none">
     <div class="row">
-        <div class="col-xs-3 temp-left-pane">
+        <!-- <div class="col-xs-3 temp-left-pane">
             <div class="row db-diagram-template-parent-text flowdiagram-template">
                 <span>Flow Chart</span>
             </div>
@@ -1166,22 +1166,22 @@
             <div class="row db-diagram-template-parent-text orgchart-template">
                 <span>Org Chart</span>
             </div>
-            <!-- <div class="row db-diagram-template-parent-text bpmn-template" style="height:24px">
+            <div class="row db-diagram-template-parent-text bpmn-template" style="height:24px">
                 <span>BPMN</span>
-            </div> -->
-        </div>
-        <div class="col-xs-9 diagramTemplates temp-right-pane" style="padding-left:0px;padding-right:0px">
+            </div>
+        </div> -->
+        <div class="col-xs-12 diagramTemplates temp-right-pane" style="padding-left:0px;padding-right:0px">
         </div>
     </div>
 </div>
 
-<ejs-dialog id="openTemplateDialog" #openTemplateDialog width='695px' height='470px' header='Create New Diagram' [target]='dlgTarget'
+<ejs-dialog id="openTemplateDialog" #openTemplateDialog width='695px' height='470px' header='Create New Card Template' [target]='dlgTarget'
     isModal="true" [animationSettings]='dialogAnimationSettings' showCloseIcon='true' allowDragging='true' [visible]='dialogVisibility'>
 </ejs-dialog>
 
 <ejs-dialog id="saveDialog" #saveDialog width='335px' header='Save Diagram' [target]='dlgTarget' isModal="true" [animationSettings]='dialogAnimationSettings'
     showCloseIcon='true' allowDragging='true' [visible]='dialogVisibility' [buttons]='saveButtons'>
-    <ng-template #content>
+    <ng-template #content >
         <div id="saveDialogContent">
             <div class="row">
                 <div class="row">File Name</div>

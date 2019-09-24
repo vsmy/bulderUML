@@ -943,10 +943,10 @@ export class HomeComponent implements AfterViewInit {
             },
             pageSettings: {
                 background: 
-                { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Croatian_passport_data_page.jpg/250px-Croatian_passport_data_page.jpg',  }, width: 100, height: 100, multiplePage: true, margin: { left: 5, top: 5 },
+                { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Croatian_passport_data_page.jpg/250px-Croatian_passport_data_page.jpg',  }, width: 100, height: 100, multiplePage: false, margin: { left: 5, top: 5 },
                 orientation: 'Landscape'
             },
-            scrollSettings: {canAutoScroll: false, scrollLimit: 'Infinity', minZoom: 0.25, maxZoom: 30 },
+            scrollSettings: {canAutoScroll: false, minZoom: 0.25, maxZoom: 30, verticalOffset: 0, horizontalOffset: 0 },
             selectedItems: { constraints: SelectorConstraints.All & ~SelectorConstraints.ToolTip },
             getNodeDefaults: this.setNodeDefaults,
             getConnectorDefaults: this.setConnectorDefaults,

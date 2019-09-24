@@ -5,28 +5,7 @@
 import { NodeModel, ConnectorModel, SymbolPalette, Connector, SymbolInfo, Diagram, PortVisibility, BpmnDiagrams, PortConstraints } from '@syncfusion/ej2-diagrams';
 Diagram.Inject(BpmnDiagrams);
 
-export function getBasicShapes(): NodeModel[] {
 
-    let basicShapes: NodeModel[] = [
-        { id: 'Rectangle', shape: { type: 'Basic', shape: 'Rectangle' }, style: { strokeWidth: 2 } },
-        { id: 'Ellipse', shape: { type: 'Basic', shape: 'Ellipse' }, style: { strokeWidth: 2 } },
-        { id: 'Hexagon', shape: { type: 'Basic', shape: 'Hexagon' }, style: { strokeWidth: 2 } },
-        { id: 'Parallelogram', shape: { type: 'Basic', shape: 'Parallelogram' }, style: { strokeWidth: 2 } },
-        { id: 'Triangle', shape: { type: 'Basic', shape: 'Triangle' }, style: { strokeWidth: 2 } },
-        { id: 'Plus', shape: { type: 'Basic', shape: 'Plus' }, style: { strokeWidth: 2 } },
-        { id: 'Star', shape: { type: 'Basic', shape: 'Star' }, style: { strokeWidth: 2 } },
-        { id: 'Pentagon', shape: { type: 'Basic', shape: 'Pentagon' }, style: { strokeWidth: 2 } },
-        { id: 'Heptagon', shape: { type: 'Basic', shape: 'Heptagon' }, style: { strokeWidth: 2 } },
-        { id: 'Octagon', shape: { type: 'Basic', shape: 'Octagon' }, style: { strokeWidth: 2 } },
-        { id: 'Trapezoid', shape: { type: 'Basic', shape: 'Trapezoid' }, style: { strokeWidth: 2 } },
-        { id: 'Decagon', shape: { type: 'Basic', shape: 'Decagon' }, style: { strokeWidth: 2 } },
-        { id: 'RightTriangle', shape: { type: 'Basic', shape: 'RightTriangle' }, style: { strokeWidth: 2 } },
-        { id: 'Cylinder', shape: { type: 'Basic', shape: 'Cylinder' }, style: { strokeWidth: 2 } },
-        { id: 'Diamond', shape: { type: 'Basic', shape: 'Diamond' }, style: { strokeWidth: 2 } },
-    ];
-
-    return basicShapes;
-}
 
 export function getFlowShapes(): NodeModel[] {
 
@@ -65,112 +44,11 @@ export function getFlowShapes(): NodeModel[] {
     return flowShapes;
 }
 
-export function getBPMNShapes(): NodeModel[] {
-
-    let bpmnShapes: NodeModel[] = [
-        {
-            id: 'BPMNStart', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'Event', event: { event: 'Start', trigger: 'None' } },
-        },
-        {
-            id: 'Intermediate', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'Event', event: { event: 'Intermediate', trigger: 'None' } },
-        },
-        {
-            id: 'End', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'Event', event: { event: 'End', trigger: 'None' } },
-        },
-        {
-            id: 'Gateway', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'Gateway' }
-        },
-        {
-            id: 'Task', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'Activity', activity: { activity: 'Task' } }
-        },
-        {
-            id: 'SubProcessEventBased', style: { strokeWidth: 2 }, shape: {
-                type: 'Bpmn', shape: 'Activity', activity: {
-                    activity: 'SubProcess',
-                    subProcess: { type: 'Transaction', transaction: { success: { visible: false }, failure: { visible: false }, cancel: { visible: false } } }
-                },
-            },
-        },
-        {
-            id: 'Message', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'Message' }
-        },
-        {
-            id: 'DataObject', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'DataObject' }
-        },
-        {
-            id: 'DataSource', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'DataSource' }
-        },
-        {
-            id: 'Activity', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'Activity' }
-        },
-        {
-            id: 'Group', style: { strokeWidth: 2 }, shape: { type: 'Bpmn', shape: 'Group' }
-        },
-        // {
-        //     id: 'sequenceFlow', shape: { type: 'Bpmn', shape: '' }
-        // }
-    ];
-
-    return bpmnShapes;
-}
-
-export function getConnectors(): ConnectorModel[] {
-
-    let connectorSymbols: ConnectorModel[] = [
-        {
-            id: 'Link1', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            targetDecorator: { shape: 'Arrow',style: { strokeWidth: 2} }, style: { strokeWidth: 2 }
-        },
-        {
-            id: 'Link2', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            targetDecorator: { shape: 'Arrow',style: { strokeWidth: 2} }, style: { strokeWidth: 2, strokeDashArray: '3,3' }
-        },
-        {
-            id: 'link3', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2 }, targetDecorator: { shape: 'None' }
-        },
-        {
-            id: 'Link4', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2, strokeDashArray: '3,3' }, targetDecorator: { shape: 'None' }
-        },
-        {
-            id: 'Link21', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            targetDecorator: { shape: 'Arrow', style: { strokeWidth: 2} }, style: { strokeWidth: 2 }
-        },
-        {
-            id: 'Link22', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            targetDecorator: { shape: 'Arrow', style: { strokeWidth: 2} }, style: { strokeWidth: 2, strokeDashArray: '3,3' }
-        },
-        {
-            id: 'link23', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2 }, targetDecorator: { shape: 'None' }
-        },
-        {
-            id: 'Link24', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2, strokeDashArray: '3,3' }, targetDecorator: { shape: 'None' }
-        },
-        {
-            id: 'link33', type: 'Bezier', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2 }, targetDecorator: { shape: 'None' }
-        },
-        {
-            id: 'Link34', type: 'Bezier', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-            style: { strokeWidth: 2, strokeDashArray: '3,3' }, targetDecorator: { shape: 'None' }
-        }
-    ];
-
-    return connectorSymbols;
-}
-
 export function generatePalette(): void {
     let palette: SymbolPalette = new SymbolPalette({
         expandMode: 'Multiple',
         palettes: [
-            //{ id: 'scratchpad', expanded: true, symbols: [], iconCss: 'ej-icon-New scratch-pad', title: 'Scratchpad' },
-            { id: 'flow', expanded: true, symbols: getFlowShapes(), title: 'Flow Shapes' },
-            { id: 'basic', expanded: false, symbols: getBasicShapes(), title: 'Basic Shapes' },
-            { id: 'bpmn', expanded: false, symbols: getBPMNShapes(), title: 'BPMN Shapes' },
-            { id: 'connectors', expanded: false, symbols: getConnectors(), title: 'Connectors' }
+            { id: 'flow', expanded: true, symbols: getFlowShapes(), title: 'Card Elements' }
         ],
         width: '100%', height: '100%', symbolHeight: 50, symbolWidth: 50,
         symbolPreview: { height: 100, width: 100 },
@@ -199,4 +77,5 @@ function setPaletteNodeDefaults(node: NodeModel): void {
         { offset: { x: 0.5, y: 1 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw }
     ];
     node.style.strokeColor = '#3A3A3A';
+    node.style.fill='#fff0'
 }

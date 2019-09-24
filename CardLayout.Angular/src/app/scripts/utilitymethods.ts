@@ -5,7 +5,7 @@
 
 import {
     NodeModel, NodeConstraints, ShapeAnnotationModel, PointModel, ConnectorModel,
-    Diagram, ConnectorConstraints, Node, TextStyle, TextStyleModel, SelectorConstraints, 
+    Diagram, ConnectorConstraints, Node, TextStyle, TextStyleModel, SelectorConstraints,
     TextAlign, HorizontalAlignment, VerticalAlignment, LinearGradient
 } from '@syncfusion/ej2-diagrams';
 import { SelectorViewModel } from './selector';
@@ -313,44 +313,14 @@ export class UtilityMethods {
     }
 
     public flowChartImage: { [key: string]: string }[] = [
-        { source: './assets/dbstyle/common_images/blank_diagram.svg', name: 'Blank Diagram', type: 'svg_blank' },
-        { source: './assets/dbstyle/flowchart_Images/Credit_Card_Processing.svg', name: 'Credit Card Processing', type: 'svg_image' },
-        { source: './assets/dbstyle/flowchart_Images/Bank_Teller_Flow.svg', name: 'Banking Teller Process Flow', type: 'svg_image' },
-        { source: './assets/dbstyle/flowchart_Images/Developer_Workflow.SVG', name: 'Agile"s Developer Workflow', type: 'svg_image' },
-    ];
-
-    public mindMapImage: { [key: string]: string }[] = [
-        { source: './assets/dbstyle/common_images/blank_diagram_mind.svg', name: 'Blank Diagram', type: 'svg_image' },
-        { source: './assets/dbstyle/mindmap_images/BusinessPlanning.SVG', name: 'Business Planning', type: 'svg_image' },
-        { source: './assets/dbstyle/mindmap_images/TQM.SVG', name: 'Quality Management', type: 'svg_image' },
-        { source: './assets/dbstyle/mindmap_images/SoftwareLifeCycle.SVG', name: 'Software Life Cycle', type: 'svg_image' },
-    ];
-
-    public orgChartImage: { [key: string]: string }[] = [
-        { source: './assets/dbstyle/common_images/blank_diagram_org.svg', name: 'Blank Diagram', type: 'svg_image' },
-        { source: './assets/dbstyle/orgchart_images/OrgRenderingStyle_1.svg', name: 'Org Template Style - 1', type: 'svg_image' },
-        { source: './assets/dbstyle/orgchart_images/OrgRenderingStyle_2.svg', name: 'Org Template Style - 2', type: 'svg_image' },
-        { source: './assets/dbstyle/orgchart_images/OrgRenderingStyle_3.svg', name: 'Org Template Style - 3', type: 'svg_image' },
-    ];
-
-    public bpmnImage: { [key: string]: string }[] = [
-        { source: './assets/dbstyle/common_images/blank_diagram.svg', name: 'Blank Diagram', type: 'svg_blank' },
-        { source: './assets/dbstyle/bpmn_images/Template1.png', name: 'BPMN Diagram 1' },
-        { source: './assets/dbstyle/bpmn_images/Template1.png', name: 'BPMN Diagram 2' },
-        { source: './assets/dbstyle/bpmn_images/Template1.png', name: 'BPMN Diagram 3' },
+        { source: './assets/dbstyle/common_images/blank_diagram.svg', name: 'Template', type: 'svg_blank' },
+        { source: './assets/dbstyle/flowchart_Images/Credit_Card_Processing.svg', name: 'ID Card', type: 'svg_image' },
+        { source: './assets/dbstyle/flowchart_Images/Bank_Teller_Flow.svg', name: 'Insurance card', type: 'svg_image' },
+        { source: './assets/dbstyle/flowchart_Images/Developer_Workflow.SVG', name: 'Driver licence MRZ', type: 'svg_image' },
     ];
 
     public getImageSource(diagramType: string, index: number): { [key: string]: string } {
-        switch (diagramType) {
-            case 'Flow Chart':
-                return this.flowChartImage[index];
-            case 'Mind Map':
-                return this.mindMapImage[index];
-            case 'Org Chart':
-                return this.orgChartImage[index];
-            default:
-                return this.bpmnImage[index];
-        }
+        return this.flowChartImage[index];
     }
 
     public readTextFile(file: string, selectedItem: SelectorViewModel): void {

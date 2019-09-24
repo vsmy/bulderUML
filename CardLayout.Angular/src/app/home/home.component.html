@@ -114,10 +114,7 @@
         </div>
         <div class='main-content' role='main'>
             <div class="db-diagram-container">
-                <div id="diagramContainerDiv" class='db-current-diagram-container' style="display: flex;
-                justify-content: center;
-                align-items: center;
-                background: #000000ad;">
+                <div id="diagramContainerDiv" class='db-current-diagram-container' style="background: #00000055;">
                     <div id="diagram" spellcheck="background: white;"></div>
                 </div>
                 <div class="db-more-diagram-options-container">
@@ -131,8 +128,6 @@
                         <div class="row db-prop-header-text">
                             Page Settings
                         </div>
-
-                        <button class="btn btn-success" (click)="changePage()">tyk to 900x600</button>
 
                         <div class="row db-prop-row">
                             <ejs-dropdownlist #pageSettingsList [dataSource]='dropDownDataSources.paperList' (change)='diagramPropertyBinding.paperListChange($event)'

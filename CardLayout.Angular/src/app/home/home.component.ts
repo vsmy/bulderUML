@@ -151,15 +151,9 @@ export class HomeComponent implements AfterViewInit {
     public pasteData: boolean = false;
     public overview: Overview;
 
-
+//VASYL FIX THAT
 public globalPageW: number = 600
 public globalPageH: number = 300
-
-    changePage() {
-        this.globalPageW = 900;
-        this.globalPageH = 600;
-        this.generateDiagram();
-    }
 
 
     public ngAfterViewInit(): void {
@@ -939,7 +933,7 @@ public globalPageH: number = 300
 
     private generateDiagram(): void {
         let diagram: CustomDiagram = new CustomDiagram({
-            width: this.globalPageW +'px', height: this.globalPageH +'px',
+            width: '100%', height: '100%',
             rulerSettings: {showRulers: true, dynamicGrid: true},
             snapSettings: {
                 horizontalGridlines: {
@@ -953,6 +947,7 @@ public globalPageH: number = 300
                 constraints: (SnapConstraints.All & ~SnapConstraints.SnapToLines)
             },
             pageSettings: {
+                boundaryConstraints: 'Page',
                 background: 
                 { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Croatian_passport_data_page.jpg/250px-Croatian_passport_data_page.jpg',  },
                  width: this.globalPageW, height: this.globalPageH, multiplePage: false, margin: { left: 5, top: 5 },
@@ -1236,7 +1231,7 @@ public globalPageH: number = 300
     public setImage(event: ProgressEvent): void {
         //(document.getElementsByClassName('sb-content-overlay')[0] as HTMLDivElement).style.display = 'none';
         let node: NodeModel = this.selectedItem.selectedDiagram.selectedItems.nodes[0];
-        node.shape = { type: 'Image', source: (event.target as FileReader).result, align: 'None' };
+        //node.shape = { type: 'Image', source: (event.target as FileReader).result, align: 'None' };
     }
 
     public loadDiagram(event: ProgressEvent): void {

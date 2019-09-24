@@ -1,5 +1,7 @@
 <input type="file" (change)="fileChangeEvent($event)" />
 
+<button *ngIf="croppedImage" (click)="rotateLeft()">Rotate left</button>
+<button *ngIf="croppedImage" (click)="rotateRight()">Rotate right</button>
 <image-cropper
     [imageChangedEvent]="imageChangedEvent"
     [maintainAspectRatio]="false"

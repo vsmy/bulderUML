@@ -72,39 +72,7 @@
                         </e-item>
                         <e-item type="Separator">
                         </e-item>
-                        <e-item prefixIcon="sf-icon-Pan tb-icons" tooltipText="Pan Tool" cssClass="tb-item-start">
-                        </e-item>
                         <e-item prefixIcon="sf-icon-Selector tb-icons" tooltipText="Pointer" cssClass="tb-item-middle tb-item-selected">
-                        </e-item>
-                        <e-item tooltipText="Draw Shapes" cssClass="tb-item-middle tb-drawtools-dropdown-btn tb-custom-diagram-disable">
-                            <ng-template #template>
-                                <button id='btnDrawShape' #btnDrawShape ejs-dropdownbutton [items]='dropDownDataSources.drawShapesList' iconCss='sf-icon-DrawingMode'
-                                    (select)="drawShapeChange($event)">
-                                </button>
-                            </ng-template>
-                        </e-item>
-                        <e-item tooltipText="Draw Connectors" cssClass="tb-item-middle tb-drawtools-dropdown-btn tb-custom-diagram-disable">
-                            <ng-template #template>
-                                <button id='btnDrawConnector' #btnDrawConnector ejs-dropdownbutton [items]='dropDownDataSources.drawConnectorsList' iconCss='sf-icon-ConnectorMode'
-                                    (select)="drawConnectorChange($event)">
-                                </button>
-                            </ng-template>
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-TextInput tb-icons" tooltipText="Text Tool" cssClass="tb-item-end tb-custom-diagram-disable">
-                        </e-item>
-                        <e-item type="Separator">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-ColorPickers tb-icons"  mode="Palette" tooltipText="Fill Color" cssClass="tb-item-start tb-item-fill">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-Pickers tb-icons"  mode="Palette" tooltipText="Border Color" cssClass="tb-item-end tb-item-stroke">
-                        </e-item>
-                        <!-- <e-item prefixIcon="sf-icon-Pickers tb-icons" tooltipText="Format" cssClass="tb-item-end">
-                        </e-item> -->
-                        <e-item type="Separator">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-Group tb-icons" tooltipText="Group" cssClass="tb-item-start tb-item-align-category">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-Ungroup tb-icons" tooltipText="Ungroup" cssClass="tb-item-end tb-item-ungroup">
                         </e-item>
                         <e-item type="Separator">
                         </e-item>
@@ -114,35 +82,11 @@
                         </e-item>
                         <e-item type="Separator">
                         </e-item>
-                        <e-item prefixIcon="sf-icon-Layers tb-icons" tooltipText="Show Layers" cssClass="tb-item-start tb-custom-diagram-disable">
-                        </e-item>
-                        <e-item prefixIcon="db-theme-svg tb-icons" tooltipText="Themes" cssClass="tb-item-end tb-custom-diagram-disable">
-                        </e-item>
-                        <e-item type="Separator">
-                        </e-item>
                         <e-item tooltipText="Order" cssClass="tb-item-end tb-item-order tb-dropdown-btn-icon">
                             <ng-template #template>
                                 <button ejs-dropdownbutton [items]='dropDownDataSources.orderCommandsList' iconCss='sf-icon-Order' (select)="orderCommandsChange($event)">
                                 </button>
                             </ng-template>
-                        </e-item>
-                        <e-item type="Separator">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-AlignLeft tb-icons" tooltipText="Align Left" cssClass="tb-item-start tb-item-align-category">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-AlignHorizontally tb-icons" tooltipText="Align Center" cssClass="tb-item-middle  tb-item-align-category">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-AlignRight tb-icons" tooltipText="Align Right" cssClass="tb-item-middle tb-item-align-category">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-AilgnTop tb-icons" tooltipText="Align Top" cssClass="tb-item-middle tb-item-align-category">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-AlignVertically tb-icons" tooltipText="Align Middle" cssClass="tb-item-middle tb-item-align-category">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-AlignBottom tb-icons" tooltipText="Align Bottom" cssClass="tb-item-middle tb-item-align-category">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-DistributeHorizontal tb-icons" tooltipText="Distribute Objects Vertically" cssClass="tb-item-middle tb-item-space-category">
-                        </e-item>
-                        <e-item prefixIcon="sf-icon-DistributeVertical tb-icons" tooltipText="Distribute Objects Horizontally" cssClass="tb-item-end tb-item-space-category">
                         </e-item>
                     </e-items>
                 </ejs-toolbar>

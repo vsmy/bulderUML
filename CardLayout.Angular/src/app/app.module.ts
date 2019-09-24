@@ -12,16 +12,21 @@ import { NumericTextBoxModule, SliderModule, UploaderModule, ColorPickerModule }
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { CropImageComponent } from './crop-image/crop-image.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
     imports: [
         FormsModule, NumericTextBoxModule, DropDownButtonModule, ContextMenuModule, SliderModule,
         ToolbarModule, DropDownListModule, ButtonModule, RadioButtonModule, UploaderModule,
-        DialogModule, CheckBoxModule, MultiSelectModule, TooltipModule, ColorPickerModule, BrowserModule
+        DialogModule, CheckBoxModule, MultiSelectModule, TooltipModule, ColorPickerModule, BrowserModule,
+        AppRoutingModule, ImageCropperModule,
     ],
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        CropImageComponent
     ],
     bootstrap: [AppComponent],
 })

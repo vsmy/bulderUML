@@ -29,6 +29,7 @@
         "@syncfusion/ej2-angular-splitbuttons": "*",
         "core-js": "^2.5.4",
         "moment": "^2.24.0",
+        "ngx-image-cropper": "^1.4.1",
         "nswag": "^13.0.6",
         "rxjs": "~6.3.3",
         "tslib": "^1.9.0",

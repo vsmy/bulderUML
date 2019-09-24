@@ -5,7 +5,7 @@ import { Component, Directive } from '@angular/core';
   /* tslint:disable */
   template: `
     <div class="db-container">
-      <main-section></main-section>
+      <router-outlet></router-outlet>
     </div>
   `,
   /* tslint:enable */

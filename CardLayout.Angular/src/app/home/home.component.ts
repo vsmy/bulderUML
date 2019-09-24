@@ -151,6 +151,17 @@ export class HomeComponent implements AfterViewInit {
     public pasteData: boolean = false;
     public overview: Overview;
 
+
+public globalPageW: number = 600
+public globalPageH: number = 300
+
+    changePage() {
+        this.globalPageW = 900;
+        this.globalPageH = 600;
+        this.generateDiagram();
+    }
+
+
     public ngAfterViewInit(): void {
         generatePalette();
         this.generateDiagram();
@@ -928,7 +939,7 @@ export class HomeComponent implements AfterViewInit {
 
     private generateDiagram(): void {
         let diagram: CustomDiagram = new CustomDiagram({
-            width: '600px', height: '300px',
+            width: this.globalPageW +'px', height: this.globalPageH +'px',
             rulerSettings: {showRulers: true, dynamicGrid: true},
             snapSettings: {
                 horizontalGridlines: {
@@ -943,7 +954,8 @@ export class HomeComponent implements AfterViewInit {
             },
             pageSettings: {
                 background: 
-                { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Croatian_passport_data_page.jpg/250px-Croatian_passport_data_page.jpg',  }, width: 100, height: 100, multiplePage: false, margin: { left: 5, top: 5 },
+                { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Croatian_passport_data_page.jpg/250px-Croatian_passport_data_page.jpg',  },
+                 width: this.globalPageW, height: this.globalPageH, multiplePage: false, margin: { left: 5, top: 5 },
                 orientation: 'Landscape'
             },
             scrollSettings: {canAutoScroll: false, minZoom: 0.25, maxZoom: 30, verticalOffset: 0, horizontalOffset: 0 },

@@ -131,6 +131,9 @@
                         <div class="row db-prop-header-text">
                             Page Settings
                         </div>
+
+                        <button class="btn btn-success" (click)="changePage()">tyk to 900x600</button>
+
                         <div class="row db-prop-row">
                             <ejs-dropdownlist #pageSettingsList [dataSource]='dropDownDataSources.paperList' (change)='diagramPropertyBinding.paperListChange($event)'
                                 [fields]='dropdownListFields' [value]='selectedItem.pageSettings.paperSize'>

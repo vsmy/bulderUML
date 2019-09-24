@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { ImageCroppedEvent, ImageCropperComponent } from 'ngx-image-cropper';
 
 @Component({
@@ -8,6 +8,8 @@ import { ImageCroppedEvent, ImageCropperComponent } from 'ngx-image-cropper';
 })
 export class CropImageComponent implements OnInit {
   @ViewChild(ImageCropperComponent) imageCropper: ImageCropperComponent;
+  @Output() imageBase64: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -22,7 +24,9 @@ export class CropImageComponent implements OnInit {
   imageCropped(event: ImageCroppedEvent) {
       this.croppedImage = event.base64;
   }
-  
+  save(){
+    this.imageBase64.emit(this.croppedImage);
+  }
   rotateLeft(){
     this.imageCropper.rotateLeft();
   }

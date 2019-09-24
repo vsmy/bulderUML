@@ -1,15 +1,21 @@
-<input type="file" (change)="fileChangeEvent($event)" />
+<div style="display: flex; justify-content:center; flex-direction: column; align-items: center;">
+  <br>
+  <br>
+  <input type="file" (change)="fileChangeEvent($event)" />
+  <br>
+  <div style="display: flex; justify-content: center;">
+    <button *ngIf="croppedImage" (click)="rotateLeft()">Rotate left</button>
+    <button *ngIf="croppedImage" (click)="rotateRight()">Rotate right</button>
+  </div>
+  <br>
+  <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="false" format="png"
+    (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"></image-cropper>
+  <br>
+  <br>
+  <span *ngIf="croppedImage">Result:</span>
+  <img [src]="croppedImage" />
+  <br>
+  <button *ngIf="croppedImage" (click)="save()">Ok</button>
 
-<button *ngIf="croppedImage" (click)="rotateLeft()">Rotate left</button>
-<button *ngIf="croppedImage" (click)="rotateRight()">Rotate right</button>
-<image-cropper
-    [imageChangedEvent]="imageChangedEvent"
-    [maintainAspectRatio]="false"
-    format="png"
-    (imageCropped)="imageCropped($event)"
-    (imageLoaded)="imageLoaded()"
-    (cropperReady)="cropperReady()"
-    (loadImageFailed)="loadImageFailed()"
-></image-cropper>
-
-<img [src]="croppedImage" />
+</div>
